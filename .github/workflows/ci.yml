@@ -36,10 +36,10 @@ jobs:
       run: pnpm run build
 
     - name: Prepare artifact
-      run: bash -c 'echo -ne "#!/usr/bin/node\n" | cat - ./dist/bundle.js > /tmp/cli_${{ matrix.node_version}}.js'
+      run: bash -c 'echo -ne "#!/usr/bin/node\n" | cat - ./dist/bundle.js > /tmp/cli_${{ matrix.node-version}}.js'
 
     - name: Upload built CLI
       uses: actions/upload-artifact@v4.6.2
       with:
         name: CLI for node ${{ matrix.node-version }}
-        path: /tmp/cli_${{ matrix.node_version}}.js
+        path: /tmp/cli_${{ matrix.node-version}}.js
