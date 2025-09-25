@@ -1,0 +1,51 @@
+{
+  "name": "mongo-migrate-exporter",
+  "version": "1.0.0",
+  "description": "Over-engineered MongoDB exporter/migrator with TypeScript and Webpack.",
+  "main": "dist/bundle.js",
+  "bin": {
+    "mongo-migrate-exporter": "dist/bundle.js"
+  },
+  "scripts": {
+    "build": "webpack --mode production --progress",
+    "dev:build": "webpack --mode development --progress --watch",
+    "lint": "echo \"No linter configured\"",
+    "start": "node dist/bundle.js",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist build .cache",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mongodb",
+    "export",
+    "migration",
+    "ndjson",
+    "cli",
+    "typescript",
+    "webpack"
+  ],
+  "author": "Oleksandr Alieksieiev",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "mongodb": "^6.20.0",
+    "ndjson": "^2.0.0",
+    "pino": "^9.11.0",
+    "pretty-bytes": "^7.1.0",
+    "yargs": "^18.0.0",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/ndjson": "^2.0.4",
+    "@types/node": "^24.5.2",
+    "@types/pino": "^7.0.5",
+    "@types/yargs": "^17.0.33",
+    "source-map-support": "^0.5.21",
+    "terser-webpack-plugin": "^5.3.14",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.2",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
